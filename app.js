@@ -10,8 +10,11 @@ function addListItem() {
     // If the keypress "code" is "Enter"
     if (event.code === "Enter") {
       // Call createListItem and pass value from todoInputEl and add the returned value to todoListEl
-      console.log(todoInputEl.value)
-      todoListEl.appendChild(createListItem(todoInputEl.value))
+      let newListItem = createListItem(todoInputEl.value)
+      todoListEl.appendChild(newListItem)
+
+      // Clear the todoInputEl field
+      todoInputEl.value = "";
     }
   })
 }
