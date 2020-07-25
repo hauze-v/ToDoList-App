@@ -11,7 +11,8 @@ function addListItem() {
     if (event.code === "Enter") {
       // Call createListItem and pass value from todoInputEl and add the returned value to todoListEl
       let newListItem = createListItem(todoInputEl.value)
-      todoListEl.appendChild(newListItem)
+      // todoListEl.appendChild(newListItem) this will append to the end of the list
+      todoListEl.insertBefore(newListItem, todoListEl.childNodes[0]) // this will insert new todo before the first child node of todoListEl
 
       // Clear the todoInputEl field
       todoInputEl.value = "";
@@ -33,7 +34,7 @@ function addListItem() {
 function toggleDone() {
   todoListEl.addEventListener("click", function(event) {
     /// If the target click's nodeName is "LI" toggle the css done class
-    if (event.target.nodeName === "LI") {
+    if (event.target.classList.contains("todo__item")) {
       event.target.classList.toggle("done")
     }
   })
