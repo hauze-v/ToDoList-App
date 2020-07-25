@@ -48,7 +48,7 @@ body {
   border-bottom: 2px solid #d49a3f;
 }
 .todo__item:hover {
-  cursor: default;
+  cursor: pointer;
 }
 .done {
   text-decoration: line-through;
