@@ -46,9 +46,23 @@ body {
   list-style-type: none;
   padding: 1rem 1.2rem;
   border-bottom: 2px solid #d49a3f;
+  display: flex;
+  justify-content: space-between;
 }
 .todo__item:hover {
   cursor: pointer;
+}
+.todo__delete__button {
+    padding: 0.1rem;
+    background: transparent;
+    color: white;
+    border: 0;
+    outline: 0;
+    font-size: 1.5rem;
+}
+.todo__delete__button:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
 .done {
   text-decoration: line-through;
