@@ -28,7 +28,8 @@ body {
 .todo__header {
   padding: 1rem 0;
 }
-.todo__title {
+.todo__title,
+.todo__instructions {
   margin: 1rem;
   text-align: center;
 }
@@ -68,5 +69,13 @@ body {
   text-decoration: line-through;
   color: #aaa;
   border-bottom: 2px solid rgb(65, 52, 32);
+}
+.todo__footer {
+  margin: 2rem auto;
+  text-decoration: none;
+  text-align: center;
+}
+.todo__footer a {
+  text-decoration: none;
 }
 
