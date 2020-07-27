@@ -2,6 +2,7 @@
 const todoInputEl = document.querySelector(".todo__input")
 const todoListEl = document.querySelector(".todo__list")
 const todoItemEls = document.querySelectorAll(".todo__item")
+const todoDelButtonEl = document.querySelector(".todo__delete__button")
 
 // Function to add input text to list
 function addListItem() {
@@ -33,7 +34,7 @@ function addListItem() {
 // Function that toggles css class "done" when todoItemEls are clicked (use parent element to avoid bubbling)
 function toggleDone() {
   todoListEl.addEventListener("click", function(event) {
-    /// If the target click's nodeName is "LI" toggle the css done class
+    /// If the target's classList contains "todo__item" toggle the css done class
     if (event.target.classList.contains("todo__item")) {
       event.target.classList.toggle("done")
     }
@@ -42,12 +43,37 @@ function toggleDone() {
 
 // Function creates li element with todo__item class
 function createListItem(text) {
-  const newListElement = document.createElement("li");
-  newListElement.classList.add("todo__item");
-  newListElement.textContent = text;
+  // Create new HTML elements
+  const newListElement = document.createElement("li")
+  const newDelButton = document.createElement("button")
+  const newSpanElement = document.createElement("span")
 
+  // Set classes and attributes
+  newListElement.classList.add("todo__item")
+  newListElement.textContent = text
+  newDelButton.classList.add("todo__delete__button")
+  newDelButton.type = "button"
+  newSpanElement.innerHTML = "&times;"
+
+  // Build the newListElement
+  newDelButton.appendChild(newSpanElement)
+  newListElement.appendChild(newDelButton)
+  
   return newListElement;
+}
+
+// Deletes todoItemEl when user clicks x button
+function removeListItem() {
+  // Event listener on parent todoListEl to avoid event bubbling
+  todoListEl.addEventListener("click", function(event) {
+    // If the parentNode of spanEl contains class, removeChild
+    if (event.target.parentNode.classList.contains("todo__delete__button")) {
+      // Removes the parent (li) node whenever the span x button is clicked
+      todoListEl.removeChild(event.target.parentNode.parentNode)
+    }
+  })
 }
 
 toggleDone()
 addListItem()
+removeListItem()
