@@ -69,4 +69,7 @@ body {
   color: #aaa;
   border-bottom: 2px solid rgb(65, 52, 32);
 }
+#x {
+  text-decoration: none !important;
+}
 

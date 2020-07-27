@@ -21,17 +21,7 @@ function addListItem() {
   }) 
 }
 
-// This doesn't work because of eventListener bubbling and propagation
-/* function toggleDone() {
-  // Loop through all the todoItems and add eventlistener to each
-  for (let todoItem of todoItemEls) {
-    todoItem.addEventListener("click", function() {
-      todoItem.classList.toggle("done")
-    })
-  }
-} */
-
-// Function that toggles css class "done" when todoItemEls are clicked (use parent element to avoid bubbling)
+// Toggles css class "done" when todoItemEls are clicked (use parent element to avoid event bubbling)
 function toggleDone() {
   todoListEl.addEventListener("click", function(event) {
     /// If the target's classList contains "todo__item" toggle the css done class
@@ -41,7 +31,7 @@ function toggleDone() {
   })
 }
 
-// Function creates li element with todo__item class
+// Creates li element with todo__item class
 function createListItem(text) {
   // Create new HTML elements
   const newListElement = document.createElement("li")
