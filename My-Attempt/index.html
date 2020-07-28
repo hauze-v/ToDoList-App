@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width='device-width', initial-scale=1.0">
+  <meta name="author" content="Adam Hauze">
+  <meta name="description" content="The purpose of this webpage is to practice js through building a ToDo App.">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <div class="todo">
+        <div class="todo__header">
+          <h1 class="todo__title">Just another Todo App</h1>
+          <p class="todo__instructions">Tap each todo item to mark it "done" or simply hit the little x to delete the
+            item entirely.</p>
+        </div>
+        <div class="todo__body">
+          <input class="todo__input" type="text" placeholder="What do you want to get done today?">
+          <ul class="todo__list">
+            <li class="todo__item">Laundry
+              <button class="todo__button">
+                <span>&times;</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+
+</html>
